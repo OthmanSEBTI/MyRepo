@@ -1,0 +1,13 @@
+name: First Workflow test
+on: [push]
+
+jobs: 
+  run-shell-commands:
+    runs-on: ubuntu-latest
+    steps:
+      - name: echo Hello World
+        run: echo "Test from othman !!!"
+      - name: Multiline command test
+        run: |
+          node -v
+          npm -v
