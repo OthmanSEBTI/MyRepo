@@ -23,4 +23,4 @@ jobs:
       - name: echo a string
         run: Write-Output "test independant Job"
       - name: Error Step
-        run: xcxvxx
+        run: xcxvxxsss
