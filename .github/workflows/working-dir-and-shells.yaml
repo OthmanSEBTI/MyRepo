@@ -7,6 +7,7 @@ jobs:
         steps:
             - name : Display Working Directory and List Files Windows Ubuntu
               run: |
+                cd
                 pwd
                 ls -a
                 echo "::error:: My error"
