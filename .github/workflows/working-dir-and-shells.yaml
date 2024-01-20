@@ -5,8 +5,8 @@ jobs:
     display-wd-info:
         runs-on: ubuntu-latest
         steps:
-            - name: Display Working Directory and List Files
-            - run: |
+            - name : Display Working Directory and List Files Windows Ubuntu
+              run: |
                 pwd
                 ls -a
                 echo "::error:: My error"
@@ -16,8 +16,8 @@ jobs:
     display-wd-info-windows:
         runs-on: windows-latest
         steps:
-            - name: Display Working Directory and List Files
-            - run: |
+            - name: Display Working Directory and List Files Windows
+              run: |
                 pwd
                 ls -a
                 echo "::error:: My error"
