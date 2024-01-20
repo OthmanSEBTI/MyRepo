@@ -29,9 +29,11 @@ jobs:
                 shell:  pwsh
         steps:
             - name: Display Working Directory and List Files Windows
+              shell: bash
               run: |
-                Get-Location
-                dir
-                echo $env:GITHUB_SHA
-                echo $env:GITHUB_REPOSITORY
-                echo $env:GITHUB_WORKSPACE
+                pwd
+                ls -a
+                echo "::error:: My error"
+                echo $GITHUB_SHA
+                echo $GITHUB_REPOSITORY
+                echo $GITHUB_WORKSPACE
