@@ -1,5 +1,9 @@
 name: Workflow Dirs & Shells
 on: [push]
+defaults:
+    run:
+        shell:  bash
+
 
 jobs:
     display-wd-info:
@@ -7,15 +11,22 @@ jobs:
         steps:
             - name : Display Working Directory and List Files Windows Ubuntu
               run: |
-                cd
                 pwd
                 ls -a
                 echo "::error:: My error"
                 echo $GITHUB_SHA
                 echo $GITHUB_REPOSITORY
                 echo $GITHUB_WORKSPACE
+
+            - name: Change working dir
+              working-directory: /home/runner
+              run: pwd
+
     display-wd-info-windows:
         runs-on: windows-latest
+        defaults:
+            run:
+                shell:  pwsh
         steps:
             - name: Display Working Directory and List Files Windows
               run: |
