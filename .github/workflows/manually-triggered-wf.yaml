@@ -1,5 +1,12 @@
 name: manually triggered workflow
-on: workflow_dispatch
+on: 
+    workflow_dispatch:
+        inputs:
+            inp1:
+                description: inp1_desc
+                type: string
+                required: true
+                default: "test_input_value"
 
 jobs:
     log-info:
