@@ -1,11 +1,15 @@
 name: expressions and contexts wf
-on: workflow_dispatch
+on: [push]
+run-name: "My test"
 
 jobs:
     expressions-job:
         runs-on: ubuntu-latest
         steps:
-            - run: |
+
+            - name: Expressions
+              id: expression
+              run: |
                 echo ${{ 1 }}
                 echo ${{ 'testststs' }}
                 echo ${{ null }}
@@ -14,6 +18,22 @@ jobs:
                 echo ${{ 'string'=='String' }}
                 echo ${{ true && false }}
                 echo ${{ true || false }}
+            
+            - name: Dummy Step
+              id: dummy_step
+              run: echo 
+              
+            - name: Contexts
+              run: |
+                echo ${{ toJson(github) }}
+                echo ${{ toJson(steps) }}
+                echo ${{ toJson(job) }}
+                echo ${{ toJson(runner) }}
+                echo ${{ toJson(secrets) }}
+
+
+
+
 
 
 
