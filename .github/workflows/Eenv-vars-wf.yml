@@ -1,8 +1,8 @@
 name : Env vars Workflow
 on : [push]
-env:
-    WF_LEVEL_ENV : "this is my WF env var"
-    test: xxxxx
+# env:
+#     WF_LEVEL_ENV : "this is my WF env var"
+#     test: xxxxx
 
 jobs :
     testing-en-vars:
