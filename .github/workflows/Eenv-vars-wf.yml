@@ -18,12 +18,14 @@ jobs :
                 echo $STEP_LEVEL_ENV
                 echo $JOB_LEVEL_ENV
 
-            - if: ${{env.WF_LEVEL_ENV}} == "this is my WF env var"
-              run: |
+            - run: |
                 echo $WF_LEVEL_ENV
                 echo $JOB_LEVEL_ENV
                 echo $STEP_LEVEL_ENV
                 echo '${{env.JOB_LEVEL_ENV}}'
                 echo '${{env.WF_LEVEL_ENV}}'
+
+            - run: |
+                echo $GITHUB_ENV
 
 
