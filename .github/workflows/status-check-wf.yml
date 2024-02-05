@@ -7,6 +7,8 @@ jobs:
         steps:
             - name: step-0
               run: echo "this step succeed!"
+            - run: |
+                echo ${{steps.step-0}}
             - name: step-1
               run: exit 1
             - name: step-2
