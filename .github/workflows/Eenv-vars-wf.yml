@@ -1,32 +1,39 @@
 name : Env vars Workflow
 on : [push]
-# env:
-#     WF_LEVEL_ENV : "this is my WF env var"
-#     test: xxxxx
+env:
+    WF_LEVEL_ENV : "this is my WF env var"
+
 
 jobs :
     testing-en-vars:
         runs-on: ubuntu-latest
-        # env:
-        #     JOB_LEVEL_ENV :  "this is my JOB env var"
+        env:
+            JOB_LEVEL_ENV :  "this is my JOB env var"
         
         steps:
-            # - name: define env vars in step level
-            #   env:
-            #     STEP_LEVEL_ENV: "this is my STEP env var"
-            #     JOB_LEVEL_ENV: "xxxx"
-            #   run: |
-            #     echo $STEP_LEVEL_ENV
-            #     echo $JOB_LEVEL_ENV
+            - name: define env vars in step level
+              env:
+                STEP_LEVEL_ENV: "this is my STEP env var"
+                JOB_LEVEL_ENV: "xxxx"
+              run: |
+                echo $STEP_LEVEL_ENV
+                echo $JOB_LEVEL_ENV
 
-            # - run: |
-            #     echo $WF_LEVEL_ENV
-            #     echo $JOB_LEVEL_ENV
-            #     echo $STEP_LEVEL_ENV
-            #     echo '${{env.JOB_LEVEL_ENV}}'
-            #     echo '${{env.WF_LEVEL_ENV}}'
+            - run: |
+                echo $WF_LEVEL_ENV
+                echo $JOB_LEVEL_ENV
+                echo $STEP_LEVEL_ENV
+                echo '${{env.JOB_LEVEL_ENV}}'
+                echo '${{env.WF_LEVEL_ENV}}'
 
             - run: |
                 cat $GITHUB_ENV
+
+            - run: |
+                TEST= 1111
+                echo "MY_ENV_VAR= TEST">> $GITHUB_ENV
+                cat $GITHUB_ENV
+
+
 
 
