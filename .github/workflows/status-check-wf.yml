@@ -13,7 +13,7 @@ jobs:
               run: exit 1
             - name: Run Only on failure
               if: failure() && steps.step-1.conclusion=='failure'
-              run: echo "step1 or 2 failed"
+              run: echo "step1 failed"
         
 
     job-2:
