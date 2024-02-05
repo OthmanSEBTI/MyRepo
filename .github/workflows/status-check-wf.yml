@@ -9,7 +9,7 @@ jobs:
               run: echo "this step succeed!"
             - name: steps-contexts
               run: |
-                echo '${{ toJson(steps) }}'
+                echo '${{ toJson(job) }}'
             # - name: step-1
             #   run: exit 1
             # - name: step-2
