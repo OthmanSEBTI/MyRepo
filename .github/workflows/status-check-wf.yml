@@ -9,13 +9,13 @@ jobs:
               run: echo "this step succeed!"
             - run: |
                 echo '${{ toJson(steps) }}'
-            - name: step-1
-              run: exit 1
-            - name: step-2
-              run: exit 1
-            - name: Run Only on failure
-              if: failure() && steps.step-1.outcome == 'failure'
-              run: echo "step1 failed"
+            # - name: step-1
+            #   run: exit 1
+            # - name: step-2
+            #   run: exit 1
+            # - name: Run Only on failure
+            #   if: failure() && steps.step-1.outcome == 'failure'
+            #   run: echo "step1 failed"
         
 
     job-2:
