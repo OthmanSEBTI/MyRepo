@@ -34,6 +34,8 @@ jobs :
                 echo "MY_ENV_VAR= $TEST">> $GITHUB_ENV
                 cat $GITHUB_ENV
 
+            - run: echo $MY_ENV_VAR
+
 
 
 
