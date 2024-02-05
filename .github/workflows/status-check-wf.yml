@@ -5,10 +5,10 @@ jobs:
     job-1:
         runs-on: ubuntu-latest
         steps:
-            - name: step-0
+            - name: step0
               run: echo "this step succeed!"
             - run: |
-                echo ${{steps.step-0}}
+                echo '${{ toJson(steps.step0) }}'
             - name: step-1
               run: exit 1
             - name: step-2
