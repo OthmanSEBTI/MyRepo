@@ -1,0 +1,21 @@
+name: Status check Workflow
+on: push
+
+jobs:
+    job-1:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Step 1
+              run: exit 1
+            - name: Step 2
+              run: echo "Hello Step 2 !"
+            - name: Run Only on failure
+              if: failure()
+              run: echo "step1 or 2 failed"
+        
+
+    job-2:
+        runs-on: ubuntu-latest
+        if: failure()
+        steps:
+            - run: echo "job2"
