@@ -2,6 +2,7 @@ name : Env vars Workflow
 on : [push]
 env:
     WF_LEVEL_ENV : "this is my WF env var"
+    test: xxxxx
 
 jobs :
     testing-en-vars:
@@ -26,7 +27,6 @@ jobs :
             #     echo '${{env.WF_LEVEL_ENV}}'
 
             - run: |
-                echo $GITHUB_ENV
                 cat $GITHUB_ENV
 
 
