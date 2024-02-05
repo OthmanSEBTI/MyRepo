@@ -12,9 +12,12 @@ jobs :
         steps:
             - name: define env vars in step level
               env:
-                STEP_LEVEL_ENV: "this is my JOB env var"
+                STEP_LEVEL_ENV: "this is my STEP env var"
                 JOB_LEVEL_ENV: "xxxx"
-              run: echo $STEP_LEVEL_ENV
+              run: |
+                echo $STEP_LEVEL_ENV
+                echo $JOB_LEVEL_ENV
+
             - run: |
                 echo $WF_LEVEL_ENV
                 echo $JOB_LEVEL_ENV
