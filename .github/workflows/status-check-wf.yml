@@ -6,10 +6,11 @@ jobs:
         runs-on: ubuntu-latest
         steps:
             - name: step0
+              id: step0 
               run: echo "this step succeed!"
             - name: steps-contexts
               run: |
-                echo '${{ toJson(job) }}'
+                echo '${{ toJson(steps) }}'
             # - name: step-1
             #   run: exit 1
             # - name: step-2
