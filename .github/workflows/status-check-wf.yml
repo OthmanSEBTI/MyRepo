@@ -17,6 +17,7 @@ jobs:
               if: failure() && steps.step-1.outcome == 'failure'
               run: echo "step1 failed"
         
+              # other status check functions always() cancel() and success()
 
     job-2:
         runs-on: ubuntu-latest
