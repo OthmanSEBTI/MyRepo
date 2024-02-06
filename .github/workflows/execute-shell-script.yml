@@ -1,0 +1,8 @@
+name: test shell script execution workflow 
+on: [push]
+
+jobs:
+    execute-shell-script-job:
+        runs-on: ubuntu-latest
+        steps:
+            - run: ./myscript.sh
