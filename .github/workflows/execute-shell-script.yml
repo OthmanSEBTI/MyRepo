@@ -5,4 +5,5 @@ jobs:
     execute-shell-script-job:
         runs-on: ubuntu-latest
         steps:
+            - uses: actions/checkout@v4
             - run: ./myscript.sh
